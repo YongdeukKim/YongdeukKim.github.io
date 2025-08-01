@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래시 로얄 스타일 게임</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="timer">시간: <span id="time">120</span>초</div>
+            <div class="score">점수: <span id="score">0</span></div>
+        </div>
+        
+        <div class="battlefield" id="battlefield">
+            <div class="tower" id="enemy-tower">
+                <div class="tower-health">체력: <span id="tower-health">1000</span></div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="elixir-bar-container">
+                <div class="elixir-bar-bg">
+                    <div class="elixir-bar-fill" id="elixir-bar"></div>
+                </div>
+                <div class="elixir-text"><span id="elixir-value">10</span> / 10</div>
+            </div>
+            <div class="card" data-card="witch" draggable="true" data-desc="마녀: 범위 공격, 소환수 생성, 데미지 100">
+                <img src="images/witch_card.png" alt="마녀">
+                <div class="card-cost">4</div>
+            </div>
+            <div class="card" data-card="prince" draggable="true" data-desc="프린스: 돌진, 단일 강력 공격, 데미지 150">
+                <img src="images/prince_card.png" alt="프린스">
+                <div class="card-cost">5</div>
+            </div>
+            <div class="card" data-card="log" draggable="true" data-desc="통나무: 직선 범위, 밀침, 데미지 50">
+                <img src="images/log_card.png" alt="통나무">
+                <div class="card-cost">2</div>
+            </div>
+            <div class="card" data-card="hog" draggable="true" data-desc="호그라이더: 빠른 이동, 타워 우선, 데미지 120">
+                <img src="images/hog_card.png" alt="호그라이더">
+                <div class="card-cost">4</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-over" class="modal">
+        <div class="modal-content">
+            <h2>게임 종료!</h2>
+            <p>최종 점수: <span id="final-score">0</span></p>
+            <button id="restart-button">다시 시작</button>
+        </div>
+    </div>
+
+    <div id="card-tooltip" class="card-tooltip"></div>
+
+    <script src="game.js"></script>
+</body>
+</html> 
